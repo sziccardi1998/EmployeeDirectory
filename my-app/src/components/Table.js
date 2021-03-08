@@ -1,34 +1,52 @@
-import React from 'react';
+import React from "react";
+import TableBody from "./TableBody";
 
+//this will recieve the user as props
 function Table(props) {
     return (
-        <table className="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">Image</th>
-                    <th scope="col">Name
-                    {/* <button className="sort" onClick={props.sortName}>
-                            <FontAwesomeIcon icon={['fas', 'sort']} />
-                        </button> */}
-                    </th>
-                    <th scope="col">Phone Number</th>
-                    <th scope="col">Email</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                {props.list.map(user => (
-                    <tr key={user.login.uuid}>
-                        <td className="align-middle">
-                            <img src={user.picture.medium} alt="Employee Profile" />
-                        </td>
-                        <td className="align-middle">{user.name.first} {user.name.last}</td>
-                        <td className="align-middle">{user.phone}</td>
-                        <td className="align-middle">{user.email}</td>
+        <div className="table m-5">
+            <table className="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Image</th>
+                        <th scope="col">
+                            <span
+                                className={props.getHeaderClassName("first")}
+                                onClick={() => {
+                                    this.handleSortDirectionChange("first");
+                                }}
+                            >
+                                First
+                  </span>
+                        </th>
+                        <th scope="col">
+                            <span
+                                className={props.getHeaderClassName("last")}
+                                onClick={() => this.handleSortDirectionChange("last")}
+                            >
+                                Last
+                  </span>
+                        </th>
+                        <th scope="col">
+                            <span
+                                className={props.getHeaderClassName("email")}
+                                onClick={() => this.handleSortDirectionChange("email")}
+                            >
+                                Email
+                  </span>
+                        </th>
+                        <th scope="col">
+                            <span
+                                className={props.getHeaderClassName("Phone")}
+                            >
+                                Phone
+                  </span>
+                        </th>
                     </tr>
-                ))}
-            </tbody>
-        </table>
+                </thead>
+                  <TableBody users={ props.users }/>              
+            </table>
+        </div>
     )
 }
 
