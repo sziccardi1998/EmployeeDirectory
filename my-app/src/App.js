@@ -1,12 +1,19 @@
-import React from 'react';
-import Container from './components/Container';
+import React from "react";
+
+import HeaderInfo from "./components/HeaderInfo";
+import UsersContainer from "./components/UsersContainer";
+import FooterInfo from "./components/FooterInfo";
+
 
 function App() {
-  return (
-   <div>
-     <Container />
-    </div>
-  );
-}
+    //containers
+    return<>
+    <HeaderInfo/>
+    {/* <SearchForm /> */}
+    <UsersContainer/>
+    <FooterInfo/>
+    </>
+  }
+
 
 export default App;
