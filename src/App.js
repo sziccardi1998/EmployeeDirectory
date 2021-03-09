@@ -1,6 +1,6 @@
 import React from "react";
 
-import HeaderInfo from "./components/HeaderInfo";
+import HeaderInfo from "./components/headerInfo";
 import UsersContainer from "./components/UsersContainer";
 import FooterInfo from "./components/footerInfo";
 
